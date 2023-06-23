@@ -4,27 +4,30 @@
 <head>
     <title>Culinary_Demo</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
 </head>
 
 <body>
-
-
-     <div>How would you make a delicious taco?</div>
-     <div id="reponse"></div>
-     <button onclick="getResponse()">Record audio</button>
-
-
+    <div class="container">
+        <h1>Culinary Demo<h1>
+        <div class="prompt-box">
+            <div class="prompt-label">How would you make a delicious taco?</div>
+            <textarea id="prompt" class="prompt-textarea"></textarea>
+        </div>
+        <div class="button-container">
+            <button class="button" onclick="getResponse()">Record audio</button>
+        </div>
+        <div class="output-box">
+            <div id="response" class="output-textarea"></div>
+        </div>
+    </div>
 
     <script>
-
         function getResponse() {
-
-
             document.getElementById('loader').style.display = 'block';
 
             var prompt = document.getElementById('prompt').value;
             var filename = document.getElementById('file').value;
-
 
             var formData = new FormData();
             formData.append('prompt', prompt);
@@ -39,12 +42,11 @@
                 contentType: 'application/json',
 
                 success: function (response) {
-                    document.getElementById('resp').innerHTML = response;
-                    console.log(response)
+                    document.getElementById('response').innerHTML = response;
+                    console.log(response);
                     document.getElementById('loader').style.display = 'none';
                 },
                 error: function (response) {
-
                     console.log("There was an error!");
                     console.log(response);
                     document.getElementById('loader').style.display = 'none';
@@ -58,24 +60,22 @@
 
             var requestData = { 'prompt': prompt };
 
-            var oOutput = document.getElementById("static_file_response")
+            var oOutput = document.getElementById("static_file_response");
             var oReq = new XMLHttpRequest();
             oReq.open("POST", "upload_static_file", true);
             oReq.onload = function (oEvent) {
                 if (oReq.status == 200) {
                     oOutput.innerHTML = "Uploaded!";
-                    console.log(oReq.response)
+                    console.log(oReq.response);
                 } else {
                     oOutput.innerHTML = "Please upload a .txt or .pdf file.<br \/>";
                 }
             };
             oOutput.innerHTML = "Sending file!";
-            console.log("Sending file!")
+            console.log("Sending file!");
             oReq.send(formData);
         }
-
     </script>
-
 </body>
 
 </html>
