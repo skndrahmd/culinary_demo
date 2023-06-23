@@ -7,17 +7,17 @@ import os
 import glob
 
 
-openai.api_key = ''
+openai.api_key = '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'
 
 r = sr.Recognizer()
 
 def record():
-    
+    r = sr.Recognizer()
     print("Hello, please speak in the microphone.")
     while True:
         with sr.Microphone() as source:
             r.adjust_for_ambient_noise(source)
-            data = r.record(source, duration=5)
+            data = r.record(source, duration=30)
             try:
                 text = r.recognize_google(data, language='en')
                 print(text)
@@ -55,7 +55,7 @@ def get_response():
 
         # Construct conversation history including user data
         conversation = [
-            {"role": "system", "content": f"You are an assistant that responds to user prompts with regards to only the following information provided to you: {policies}."},
+            {"role": "system", "content": f"You are a master chef working with Gordan Ramsey as a judge on his show. Analyze the contestant's response based on the following criteria: {policies}."},
             {"role": "user", "content": f"{user_input}"},
             {"role": "assistant", "content": f"{policies}"}
         ]
@@ -74,9 +74,9 @@ def get_response():
 
 
 
-@app.route('/record_audio', methods=['POST'])
-def record_audio():
-    pass
+# @app.route('/record_audio', methods=['POST'])
+# def record_audio():
+#     pass
 
 
 # Run the Flask application

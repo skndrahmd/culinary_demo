@@ -19,35 +19,16 @@
 
         function getResponse() {
 
-
-            document.getElementById('loader').style.display = 'block';
-
-            var prompt = document.getElementById('prompt').value;
-            var filename = document.getElementById('file').value;
-
-
-            var formData = new FormData();
-            formData.append('prompt', prompt);
-            formData.append('filename', filename);
-
-            var requestData = { 'prompt': prompt };
-
             $.ajax({
                 url: '/get-response',
-                data: JSON.stringify(requestData),
                 type: 'POST',
                 contentType: 'application/json',
 
                 success: function (response) {
-                    document.getElementById('resp').innerHTML = response;
-                    console.log(response)
-                    document.getElementById('loader').style.display = 'none';
+                   console.log(response)
                 },
                 error: function (response) {
-
-                    console.log("There was an error!");
-                    console.log(response);
-                    document.getElementById('loader').style.display = 'none';
+                    console.log("error")
                 }
             });
         }
