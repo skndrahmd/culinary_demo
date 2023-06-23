@@ -1,0 +1,11 @@
+Criteria: 
+Overall score of recipe:
+Number of ingredients included:
+Complexity of recipe:
+Time it would take to create recipe:
+Number of unique ingredients listed in recipe:
+Did the response miss any essential ingredients?
+Did the response list the correct steps on how to make the recipe?
+Overall, what went well with the response? Include information from statistics above
+Overall, what could be improved in the response?
+What are some concrete examples of ways the recipe could have been better?
