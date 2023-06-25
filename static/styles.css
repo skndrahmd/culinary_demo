@@ -35,6 +35,7 @@ body {
     padding: 5px;
     border: 1px solid #CCC;
     border-radius: 4px;
+    font-weight: bold;
 }
 
 .button-container {

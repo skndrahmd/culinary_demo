@@ -17,7 +17,7 @@ def record():
     while True:
         with sr.Microphone() as source:
             r.adjust_for_ambient_noise(source)
-            data = r.record(source, duration=30)
+            data = r.record(source, duration=2)
             try:
                 text = r.recognize_google(data, language='en')
                 print(text)
@@ -68,9 +68,15 @@ def get_response():
 
         # Extract the generated response from the OpenAI API
         response_text = response['choices'][0]['message']['content']
-        print(response_text)
 
-        return (response_text)
+        obj = {
+            'response_text': response_text,
+            'user_input': user_input
+        }
+
+        print(obj)
+
+        return (obj)
 
 
 

@@ -26,58 +26,23 @@
         function getResponse() {
 
 
-            document.getElementById('loader').style.display = 'block';
-
-            var prompt = document.getElementById('prompt').value;
-            var filename = document.getElementById('file').value;
-
-
-            var formData = new FormData();
-            formData.append('prompt', prompt);
-            formData.append('filename', filename);
-
-            var requestData = { 'prompt': prompt };
-
             $.ajax({
                 url: '/get-response',
                 type: 'POST',
                 contentType: 'application/json',
 
                 success: function (response) {
-                    document.getElementById('resp').innerHTML = response;
+                    document.getElementById('response').innerHTML = response["response_text"];
+                    document.getElementById('prompt').innerHTML = response["user_input"];
                     console.log(response)
-                    document.getElementById('loader').style.display = 'none';
                 },
                 error: function (response) {
-
                     console.log("There was an error!");
                     console.log(response);
-                    document.getElementById('loader').style.display = 'none';
                 }
             });
         }
 
-        function uploadFile(form) {
-            var prompt = document.getElementById('prompt').value;
-            const formData = new FormData(form);
-
-            var requestData = { 'prompt': prompt };
-
-            var oOutput = document.getElementById("static_file_response");
-            var oReq = new XMLHttpRequest();
-            oReq.open("POST", "upload_static_file", true);
-            oReq.onload = function (oEvent) {
-                if (oReq.status == 200) {
-                    oOutput.innerHTML = "Uploaded!";
-                    console.log(oReq.response);
-                } else {
-                    oOutput.innerHTML = "Please upload a .txt or .pdf file.<br \/>";
-                }
-            };
-            oOutput.innerHTML = "Sending file!";
-            console.log("Sending file!");
-            oReq.send(formData);
-        }
     </script>
 </body>
 
