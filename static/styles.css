@@ -9,6 +9,7 @@ body {
 }
 #h1 {
      font-family: 'Montserrat', sans-serif;
+     
  
 }
 .container {
@@ -17,15 +18,20 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 10px;
+    
 }
 
 .prompt-box {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .prompt-label {
     font-size: 18px;
     margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 5000;
 }
 
 .prompt-textarea {
@@ -35,6 +41,7 @@ body {
     padding: 5px;
     border: 1px solid #CCC;
     border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .button-container {
@@ -48,9 +55,10 @@ body {
     color: #FFF;
     font-size: 18px;
     border: none;
-    border-radius: 4px;
+    border-radius: 65px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
@@ -69,4 +77,5 @@ body {
     border: 1px solid #CCC;
     border-radius: 4px;
     font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
