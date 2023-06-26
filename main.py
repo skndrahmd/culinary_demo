@@ -17,7 +17,7 @@ def record():
     while True:
         with sr.Microphone() as source:
             r.adjust_for_ambient_noise(source)
-            data = r.record(source, duration=10)
+            data = r.record(source, duration=30)
             try:
                 text = r.recognize_google(data, language='en')
                 print(text)
@@ -80,9 +80,6 @@ def get_response():
 
 
 
-# @app.route('/record_audio', methods=['POST'])
-# def record_audio():
-#     pass
 
 
 # Run the Flask application

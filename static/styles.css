@@ -9,7 +9,27 @@ body {
 #h1 {
      font-family: 'Montserrat', sans-serif;
      
- 
+}
+
+
+#loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
 }
 .container {
     background-color: #FFFAF0;
@@ -40,11 +60,7 @@ body {
     padding: 5px;
     border: 1px solid #CCC;
     border-radius: 4px;
-<<<<<<< HEAD
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-=======
-    font-weight: bold;
->>>>>>> 21ff77e3ee6d8a30831baf3105029c6ce57bcd85
 }
 
 .button-container {
