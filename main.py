@@ -17,7 +17,7 @@ def record():
     while True:
         with sr.Microphone() as source:
             r.adjust_for_ambient_noise(source)
-            data = r.record(source, duration=2)
+            data = r.record(source, duration=10)
             try:
                 text = r.recognize_google(data, language='en')
                 print(text)
