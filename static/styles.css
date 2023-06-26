@@ -1,11 +1,10 @@
 body {
     background-color: #F7D4EB;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
 }
 #h1 {
      font-family: 'Montserrat', sans-serif;
@@ -21,6 +20,31 @@ body {
 
 .prompt-box {
     margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+#speak {
+    padding: 2rem;
+}
+
+
+#loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .prompt-label {
@@ -64,10 +88,10 @@ body {
 
 .output-textarea {
     width: 100%;
-    height: 100px;
     resize: none;
     padding: 5px;
     border: 1px solid #CCC;
     border-radius: 4px;
     font-weight: bold;
+    font-size: 15px;
 }

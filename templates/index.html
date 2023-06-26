@@ -17,6 +17,7 @@
         <div class="button-container">
             <button class="button" onclick="getResponse()">Record audio</button>
         </div>
+        <div id="speak" style="display: none;">Please speak in the microphone. <div id="loader" style="display:none;"></div></div>
         <div class="output-box">
             <div id="response" class="output-textarea"></div>
         </div>
@@ -24,6 +25,9 @@
 
     <script>
         function getResponse() {
+            
+            document.getElementById('speak').style.display = 'block';
+            document.getElementById('loader').style.display = 'block';
 
 
             $.ajax({
@@ -32,8 +36,11 @@
                 contentType: 'application/json',
 
                 success: function (response) {
-                    document.getElementById('response').innerHTML = response["response_text"];
+                    document.getElementById('response').innerText = response["response_text"];
                     document.getElementById('prompt').innerHTML = response["user_input"];
+                    document.getElementById('speak').style.display = 'none';
+                    document.getElementById('loader').style.display = 'none';
+                    
                     console.log(response)
                 },
                 error: function (response) {
