@@ -7,7 +7,7 @@ import os
 import glob
 
 
-openai.api_key = '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'
+openai.api_key = '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'
 
 r = sr.Recognizer()
 
